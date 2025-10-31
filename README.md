@@ -36,7 +36,7 @@ Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of condu
 - [Severin Graf](https://github.com/sevigraf) 
 - [Simon Graf](https://github.com/simgraworldwide)
 - Florian Wahl
-- Jorgo Ananiadis
+- [Jorgo Ananiadis](https://github.com/JorgoA)
 
 ## License
 
