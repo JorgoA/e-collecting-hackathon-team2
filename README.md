@@ -15,6 +15,7 @@ Wie können Geschäfte eindeutig identifiziert werden?
 
 <img width="2463" height="1394" alt="image" src="docs/e-Collecting.png" />
 
+
 ## Topics addressed
 
 | Topic | (How) is it addressed? |
@@ -29,35 +30,7 @@ Wie können Geschäfte eindeutig identifiziert werden?
 
 ## Managment-Summary ##
 
-Das Projekt E-Collecting vom bestehenden Stimmregister aus gedacht verfolgt das Ziel, die bestehenden kommunalen Fachsysteme zur Unterschriftenkontrolle um digitale Kanäle zu erweitern und so die Grundlage für ein schweizweit einheitliches, sicheres und effizientes E-Collecting-Verfahren zu schaffen. Im Zentrum steht die Weiterverwendung bewährter kommunaler Infrastrukturen und Prozesse, kombiniert mit klar definierten Schnittstellen zu neuen digitalen Komponenten wie Bürgerportalen, E-Collecting-Tresoren und den Open-Government-Data-(OGD)-Plattformen.
 
-**Ausgangslage**
-
-Städte und Gemeinden sind heute für die Prüfung von Unterschriften sämtlicher Volksbegehren auf allen föderalen Ebenen verantwortlich. Diese Aufgabe erfolgt bisher mit etablierten Fachsystemen, die grosses Vertrauen geniessen und schweizweit im Einsatz sind. Dieses bewährte Fundament soll gezielt genutzt und um digitale Komponenten erweitert werden. 
-
-**Zielsetzung**
-
-Das Projekt zeigt auf, wie E-Collecting technisch und organisatorisch in die bestehenden kommunalen Abläufe integriert werden kann. Dabei liegt der Fokus nicht auf der vollständigen Systementwicklung, sondern auf der Klärung der Voraussetzungen für eine interoperable, föderal abgestützte Lösung.
-Am Hackathon fokusieren wir uns auf die Identifikation und Definition der Schnittstellen zwischen den einzelnen Akteuren. 
-Welche Schnittstellen und Meldeflüsse mit welchen Daten sind erforderlich? Gibt es bereits passende eCH-Standarddefinitionen oder müssen neue geschaffen werden und wie können Volksbegehren bzw. Geschäfte eindeutig identifiziert werden.
-
-**Lösungsansatz**
-
-Das Konzept sieht einen dezentralen Ansatz vor, bei dem Bürgerportale als Frontend für die digitale Willensbekundung fungieren. Nach der Identifikation (z. B. via eID) wird die digitale Unterschrift in Form einer anonymisierten EC-GUID erzeugt und über die Sedex-Schnittstelle an die zuständige Gemeinde übermittelt. Diese prüft die Stimmberechtigung auf Basis des kommunalen Stimmregisters und bescheinigt die Willensbekundung – analog zu den heutigen Papierprozessen. Alle gültigen Datensätze werden im E-Collecting-Tresor abgelegt, der als zentrale, aber datenschutzkonforme Sammelstelle dient.
-Parallel werden Volksbegehren und Metadaten über die Open-Government-Data-Plattform (i14y) bereitgestellt, um Transparenz und Nachvollziehbarkeit sicherzustellen.
-
-**Vorteile**
-
-Vertrauenswürdigkeit: Die Gemeinden bleiben zentrale Prüfstellen und behalten die Datenhoheit.
-Skalierbarkeit: Das Modell funktioniert föderal über alle Ebenen hinweg.
-Datenschutz: Es erfolgt keine Speicherung personenbezogener Daten ausserhalb des Gemeinde Fachsystems. 
-Nachvollziehbarkeit: Einheitliche Identifikatoren (EC-GUID/P-GUID) und standardisierte Schnittstellen sichern Konsistenz und Prüfbarkeit.
-
-**Nächste Schritte**
-Im Rahmen des Hackathons werden die relevanten Schnittstellen und Meldeflüsse identifiziert und spezifiziert. Dabei steht im Fokus, welche Daten ausgetauscht werden, wie diese strukturiert sind (nach eCH-Standards) und wie politische Geschäfte eindeutig identifiziert werden können.
-Die gewonnenen Erkenntnisse sollen mit bestehenden Lösungsideen von Bürgerportalen kombiniert werden, um ein durchgängiges, interoperables Gesamtkonzept zu skizzieren. Parallel dazu könnte die Finalisierung bzw. Erweiterung der nötigen eCH-Standards vorangetrieben werden, um eine technische Grundlage für die Kommunikation zwischen den Systemen zu schaffen.
-Ebenso kann die Konzeption der Open-Government-Data-Plattform (i14y) konkretisiert werden, damit Volksbegehren und Metadaten künftig standardisiert publiziert und von allen beteiligten Systemen automatisiert bezogen werden können.
-Diese Schritte schaffen die technische und organisatorische Grundlage für die Einführung eines sicheren, föderal abgestützten E-Collecting-Systems, das die Digitalisierung der direkten Demokratie in der Schweiz pragmatisch, vertrauenswürdig und anschlussfähig vorantreibt.
 
 ## Gesamtübersicht
 
@@ -68,7 +41,7 @@ Diese Schritte schaffen die technische und organisatorische Grundlage für die E
 Das Bürger-Portal ist der Touchpoint des Bürgers in Bezug auf Volksbegehren und ist Teil einer übergeordneten n-Portal-Strategie. Dabei wird vorgesehen, dass mehrere Portale verschiedener Anbieter parallel existieren können.
 Ein einzelnes Portal muss nicht zwingend alle Funktionen abdecken (z. B. Sammel-Organisationen oder spezielle Erweiterungen).
 Verbindlich ist jedoch die Anbindung an die Sedex-Schnittstelle, um den Datenaustausch, Sicherheitsstandards und Anschlussfähigkeit zu gewährleisten. 
-Die Volksbegehren (VBGs) können periodisch, beispielsweise alle 24 Stunden, über die OGD-Schnittstelle importiert werden. Dadurch ist gewährleistet, dass ein Portale stets über die aktuellen Informationen zu laufenden und neuen Volksbegehren verfügt.
+Die Volksbegehren (VBGs) können periodisch, beispielsweise alle 24 Stunden, über die OGD-Schnittstelle importiert werden. Dadurch ist gewährleistet, dass jedes Portal stets über die aktuellen Informationen zu laufenden und neuen Volksbegehren verfügt.
 
 *Funktionen für Bürgerinnen und Bürger*
 Das Portal ermöglicht Bürgerinnen und Bürgern die digitale Abgabe einer Willensbekundung im Rahmen eines Volksbegehrens.
@@ -77,7 +50,7 @@ Die Kernfunktionen sind:
 - Identifikation des Bürgers, z. B. mittels eID oder einem vergleichbaren elektronischen Identifikationsverfahren.
 - Abgabe der Willensbekundung nach erfolgreicher Identifikation.
 - Bei der Abgabe wird eine GUID generiert und gespeichert, ohne Personenbezug (keine Zuordnung zum Bürger).
-- Nur die GUID und der Zeitstempel wird im Portal gespeichert
+- Nur die GUID und der Zeitstempel werden im Portal gespeichert
 - Informationen wie GUID, ID-Bürger, Zeitstempel, ID-Portal und optional ID-Sammelorganisation werden an die Gemeinde übermittelt.
 - Nach Abschluss der Willensbekundung wird dem Bürger eine Bestätigung angezeigt und die zugehörige GUID zur Verfügung gestellt (z. B. als Download oder zur Integration in ein digitales Wallet).
 - 
@@ -90,7 +63,7 @@ Die Kernfunktionen sind:
 *Sammel-Organisationen*
 Eine Sammel-Organisationen registriert sich auf einem Portal und kann über diesen Zugang:
 - Sammelaktionen verwalten und
-- einen individuellen QR-Code generieren, der eine spätere Auswertung aller digital gesammelten Willensbekundungen dieser Organisation ermöglicht.
+- einen individuellen (QR-)Code generieren, der eine spätere Auswertung aller digital gesammelten Willensbekundungen dieser Organisation ermöglicht.
 
 *Übermittlung an die Gemeinde*
 Nach erfolgreicher Willensbekundung wird der entsprechende Datensatz über die Sedex-Schnittstelle an die zuständige Gemeinde übermittelt.
@@ -193,6 +166,7 @@ Jeder referendumsfähige Beschluss wird publiziert. Neu wird auch dieser Beschlu
 | F2 | Eine Sammelorganisation kann über ihren Login den aktuellen Stand der GUID's im E-Collecting-Tresor prüfen und so feststellen, wie gross ihr Anteil an den gültigen Unterschriten ist. |Sammelorganisation | 
 
 
+
 | Kommunikationsweg | Technologie | Standard |
 | -| ------- |-|
 | A1 | nicht definiert | nicht definiert|
@@ -208,7 +182,11 @@ Jeder referendumsfähige Beschluss wird publiziert. Neu wird auch dieser Beschlu
 | F2 | Sedex | eCH-Standard - zu definieren|
 
 
-<img width="1606" height="1102" alt="image" src="docs/Prozessübersicht.png" />
+
+
+## Contributing
+
+Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of conduct.
 
 ## Team Members
 
@@ -219,6 +197,37 @@ Jeder referendumsfähige Beschluss wird publiziert. Neu wird auch dieser Beschlu
 - Jorgo Ananiadis
 
 ## Mermaid
+
+```mermaid
+---
+config:
+  theme: redux
+  layout: dagre
+---
+flowchart TB
+    C(["Citizen"]) <-- "Signs Init/Ref, gets personal GUID" --> P(("n Platforms"))
+    P == "AHVN-13, GUID, Issue-ID, Date" ==> M(["Municipality"])
+    U(["User/Comitee"]) -- "Opens Init/Ref on Platform" --> P
+    M == "GUID, Issue-ID, n paper based signatures" ==> V["E-Collecting-Vault"]
+    P <-- Query GUID --> V
+    V -. Opens if Init is submitted .-> Ch(["Chancelery"])
+    M -- THX --> P
+    Ch == "Issue-ID, Type, from/to, Level, BFS-ID" ==> OGD["OGD"]
+    OGD -- "Issue-IDs" --> M & P
+    C <-- Query GUID --> V
+    U <-- Paper Forms --> M
+    OGD@{ shape: cyl}
+     P:::Pine
+     M:::Pine
+     U:::Pine
+     V:::Sky
+     Ch:::Pine
+    classDef Rose stroke-width:1px, stroke-dasharray:none, stroke:#FF5978, fill:#FFDFE5, color:#8E2236
+    classDef Pine stroke-width:4px, stroke-dasharray:none, stroke:#254336, fill:#27654A, color:#FFFFFF
+    classDef Sky stroke-width:1px, stroke-dasharray:none, stroke:#374D7C, fill:#E2EBFF, color:#374D7C
+```
+
+
 ```mermaid
 ---
 config:
@@ -248,9 +257,6 @@ flowchart TB
     classDef Pine stroke-width:4px, stroke-dasharray:none, stroke:#254336, fill:#27654A, color:#FFFFFF
     classDef Sky stroke-width:1px, stroke-dasharray:none, stroke:#374D7C, fill:#E2EBFF, color:#374D7C
 ```
-## Contributing
-
-Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of conduct.
 
 ## License
 
